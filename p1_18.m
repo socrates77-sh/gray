@@ -1,0 +1,144 @@
+VT = 26e-3;
+ni = 1.5e16;
+q = 1.6e-19;
+epi = 1.04e-10;
+eox = 3.9*8.854e-12;
+
+k = 194e-6;
+Vt0 = 0.6;
+Ec = 1.5e6;
+
+W = 100e-6;
+L = 10e-6;
+figure(1);
+hold on;
+grid on;
+
+VGS = 1;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'r-');
+line([vds_act 3], [ids2 ids2], 'color', 'r', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'r:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'r', 'linestyle', ':');
+
+VGS = 2;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'b-');
+line([vds_act 3], [ids2 ids2], 'color', 'b', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'b:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'b', 'linestyle', ':');
+
+VGS = 3;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'k-');
+line([vds_act 3], [ids2 ids2], 'color', 'k', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'k:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'k', 'linestyle', ':');
+
+W = 10e-6;
+L = 1e-6;
+figure(2);
+hold on;
+grid on;
+
+VGS = 1;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'r-');
+line([vds_act 3], [ids2 ids2], 'color', 'r', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'r:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'r', 'linestyle', ':');
+
+VGS = 2;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'b-');
+line([vds_act 3], [ids2 ids2], 'color', 'b', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'b:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'b', 'linestyle', ':');
+
+VGS = 3;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'k-');
+line([vds_act 3], [ids2 ids2], 'color', 'k', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'k:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'k', 'linestyle', ':');
+
+W = 5e-6;
+L = 0.5e-6;
+figure(3);
+hold on;
+grid on;
+
+VGS = 1;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'r-');
+line([vds_act 3], [ids2 ids2], 'color', 'r', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'r:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'r', 'linestyle', ':');
+
+VGS = 2;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'b-');
+line([vds_act 3], [ids2 ids2], 'color', 'b', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'b:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'b', 'linestyle', ':');
+
+VGS = 3;
+vds1_1 = 0:0.01:(VGS-Vt0);
+ids1_1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1_1-vds1_1.^2);
+ids2_1 = (k/2)*(W/L)*(VGS-Vt0)^2;
+vds_act = (Ec*L*(sqrt(1+2*(VGS-Vt0)/(Ec*L))-1));
+ids2 = (k/2)*(W/L)*vds_act^2;
+vds1 = 0:0.01:vds_act;
+ids1 = (k/2)*(W/L)*(2*(VGS-Vt0)*vds1-vds1.^2)./(1+vds1/(Ec*L));
+plot(vds1, ids1, 'k-');
+line([vds_act 3], [ids2 ids2], 'color', 'k', 'linestyle', '-');
+plot(vds1_1, ids1_1, 'k:');
+line([VGS-Vt0 3], [ids2_1 ids2_1], 'color', 'k', 'linestyle', ':');
