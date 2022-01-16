@@ -1,14 +1,18 @@
-clear
-clc
+init_p;
 
-syms x y n
-f = x^n + y^n;
-r = int(f)
+syms x1 x2;
+ic3 = 1 / ((1 + exp(-x1)) * (1 + exp(-x2)));
+ic4 = 1 / ((1 + exp(x1)) * (1 + exp(-x2)));
+ic5 = 1 / ((1 + exp(x1)) * (1 + exp(x2)));
+ic6 = 1 / ((1 + exp(-x1)) * (1 + exp(x2)));
 
-pretty(r)
+dic = ic3 - ic6 - (ic4 - ic5);
+simplify(dic)
+rewrite(dic, 'exp')
 
-% text('Position', [0, 0.5], 'Fontsize', 18, 'Interpreter', 'latex', 'String', ['$' latex(r) '$'])
-% ax = gca
-% ax.XAxis.Visible = 'off'
-% ax.YAxis.Visible = 'off'
-latex_disp(r)
+t = tanh(x1 / 2)*tanh(x2 / 2)
+rewrite(t, 'exp')
+
+% % fplot(t)
+% t4 = taylor(tanh(x), 'Order', 4)
+% latex_disp(t4)
