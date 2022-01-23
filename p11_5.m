@@ -42,4 +42,4 @@ S_vo3 = k4T / RL * RL^2
 voT = sqrt(S_vo1 + S_vo2 + S_vo3)
 viT = voT / abs(Av)
 
-% 346
+% 348
